@@ -6,7 +6,7 @@ import StatusIndicator from "@/components/StatusIndicator";
 import HeartRateChart from "@/components/HeartRateChart";
 import HistoryCalendar from "@/components/HistoryCalendar";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookHeart } from "lucide-react";
+import { BookHeart, Meditation } from "lucide-react";
 import { mentalHealthService } from "@/services/mentalHealthService";
 import { heartRateService } from "@/services/heartRateService";
 import { MentalHealthData } from "@/types";
@@ -62,6 +62,18 @@ const Dashboard = () => {
               <div className="flex items-center gap-3">
                 <BookHeart className="h-6 w-6 text-primary" />
                 <h3 className="text-lg font-semibold">Feel depressed? Check this out</h3>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card 
+            className="border-none shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+            onClick={() => navigate('/mental-health-tips')}
+          >
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3">
+                <Meditation className="h-6 w-6 text-primary" />
+                <h3 className="text-lg font-semibold">Improve your mental wellness</h3>
               </div>
             </CardContent>
           </Card>

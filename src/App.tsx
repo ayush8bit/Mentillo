@@ -10,6 +10,7 @@ import History from "./pages/History";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import DepressionTips from "./pages/DepressionTips";
+import MentalHealthTips from "./pages/MentalHealthTips";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/history" element={<History />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/depression-tips" element={<DepressionTips />} />
+            <Route path="/mental-health-tips" element={<MentalHealthTips />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
