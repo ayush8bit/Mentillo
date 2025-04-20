@@ -1,13 +1,13 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Meditation } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const MentalHealthTips = () => {
   return (
     <div className="h-full w-full overflow-y-auto pb-16">
       <div className="p-4 space-y-4">
         <div className="flex items-center gap-2 mb-6">
-          <Meditation className="h-6 w-6 text-primary" />
+          <Heart className="h-6 w-6 text-primary" />
           <h1 className="text-2xl font-bold tracking-tight">Mental Wellness Tips</h1>
         </div>
 
