@@ -6,11 +6,10 @@ import StatusIndicator from "@/components/StatusIndicator";
 import HeartRateChart from "@/components/HeartRateChart";
 import HistoryCalendar from "@/components/HistoryCalendar";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookHeart, Heart, Frown, Angry, Meh, Confused, Smile } from "lucide-react";
+import { BookHeart, Heart } from "lucide-react";
 import { mentalHealthService } from "@/services/mentalHealthService";
 import { heartRateService } from "@/services/heartRateService";
 import { MentalHealthData } from "@/types";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -41,68 +40,10 @@ const Dashboard = () => {
     setMentalHealthData(data);
   };
 
-  const moodAdvice = {
-    sad: "Try doing something creative - it can help lift your mood!",
-    angry: "Take deep breaths and count to 10 - it works wonders for anger management.",
-    confused: "Take a short break and do some light stretching to refresh your mind.",
-    meh: "How about calling a friend? Social connections can boost your mood.",
-    happy: "Awesome! Share your positive energy with someone who might need it today!"
-  };
-
   return (
     <div className="h-full w-full overflow-y-auto pb-16">
       <div className="p-4 space-y-4">
         <h1 className="text-2xl font-bold tracking-tight">Mentillo</h1>
-
-        <div className="bg-card rounded-lg p-6 shadow-sm border">
-          <h2 className="text-xl font-semibold mb-4 text-center">How are you feeling today?</h2>
-          <div className="flex justify-center gap-6">
-            <Popover>
-              <PopoverTrigger>
-                <Frown className="h-8 w-8 cursor-pointer hover:text-primary transition-colors" />
-              </PopoverTrigger>
-              <PopoverContent>
-                <p className="text-sm">{moodAdvice.sad}</p>
-              </PopoverContent>
-            </Popover>
-
-            <Popover>
-              <PopoverTrigger>
-                <Angry className="h-8 w-8 cursor-pointer hover:text-primary transition-colors" />
-              </PopoverTrigger>
-              <PopoverContent>
-                <p className="text-sm">{moodAdvice.angry}</p>
-              </PopoverContent>
-            </Popover>
-
-            <Popover>
-              <PopoverTrigger>
-                <Confused className="h-8 w-8 cursor-pointer hover:text-primary transition-colors" />
-              </PopoverTrigger>
-              <PopoverContent>
-                <p className="text-sm">{moodAdvice.confused}</p>
-              </PopoverContent>
-            </Popover>
-
-            <Popover>
-              <PopoverTrigger>
-                <Meh className="h-8 w-8 cursor-pointer hover:text-primary transition-colors" />
-              </PopoverTrigger>
-              <PopoverContent>
-                <p className="text-sm">{moodAdvice.meh}</p>
-              </PopoverContent>
-            </Popover>
-
-            <Popover>
-              <PopoverTrigger>
-                <Smile className="h-8 w-8 cursor-pointer hover:text-primary transition-colors" />
-              </PopoverTrigger>
-              <PopoverContent>
-                <p className="text-sm">{moodAdvice.happy}</p>
-              </PopoverContent>
-            </Popover>
-          </div>
-        </div>
         
         <div className="space-y-4">
           <HeartRateMonitor />
@@ -147,4 +88,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
