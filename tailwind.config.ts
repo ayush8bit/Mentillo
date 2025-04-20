@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				mental: {
+					stress: '#FF6B6B',
+					depression: '#6B66FF',
+					insomnia: '#9966CC',
+					calm: '#4ECDC4',
+					healthy: '#8FE388',
+					warning: '#FFD166',
+					danger: '#F25F5C',
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-light': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'heart-beat': {
+					'0%': { transform: 'scale(1)' },
+					'15%': { transform: 'scale(1.15)' },
+					'30%': { transform: 'scale(1)' },
+					'45%': { transform: 'scale(1.15)' },
+					'60%': { transform: 'scale(1)' },
+					'100%': { transform: 'scale(1)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-light': 'pulse-light 2s ease-in-out infinite',
+				'heart-beat': 'heart-beat 1s ease-in-out infinite'
 			}
 		}
 	},
