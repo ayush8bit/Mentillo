@@ -1,5 +1,6 @@
 
-export type MentalHealthStatus = 'healthy' | 'stress' | 'depression' | 'insomnia' | 'unknown';
+export type StressLevel = 'not_stressed' | 'stressed' | 'highly_stressed';
+export type DepressionLevel = 'not_depressed' | 'depressed';
 
 export interface HeartRateReading {
   timestamp: number;
@@ -7,19 +8,16 @@ export interface HeartRateReading {
 }
 
 export interface MentalHealthData {
-  status: MentalHealthStatus;
-  confidence: number; // 0-100
-  riskFactors?: {
-    stress: number; // 0-100
-    depression: number; // 0-100
-    insomnia: number; // 0-100
-  };
+  stressLevel: StressLevel;
+  depressionLevel: DepressionLevel;
+  currentHeartRate: number;
 }
 
 export interface HistoricalData {
-  date: string; // ISO date string
+  date: string;
   averageHeartRate: number;
-  mentalStatus: MentalHealthStatus;
+  stressLevel: StressLevel;
+  depressionLevel: DepressionLevel;
 }
 
 export interface UserSettings {
